@@ -5,13 +5,13 @@ using namespace std;
 void bfs(int inicio, vector< vector<int> > &adj, int *dist) {
 	queue<int> q;
 	q.push(inicio);
-	dist[inicio] = 0;//Dist‚ncia do ponto inicial ao ponto inicial È 0.
+	dist[inicio] = 0;//Dist√¢ncia do ponto inicial ao ponto inicial √© 0.
 	while(!q.empty()) {
 		int v = q.front();
 		q.pop();
 		cout << "\nDistancia de " << inicio << " a " << v << " eh " << dist[v] << endl;
-		for(vector<int>::iterator e = adj[v].begin(); e != adj[v].end(); e++) {//Analisando todos vÈrtices vizinhos do vÈrtice v.
-			if(dist[*e] == -1) {//Se a dist‚ncia ainda n„o foi determinada.
+		for(vector<int>::iterator e = adj[v].begin(); e != adj[v].end(); e++) {//Analisando todos v√©rtices vizinhos do v√©rtice v.
+			if(dist[*e] == -1) {//Se a dist√¢ncia ainda n√£o foi determinada.
 				dist[*e] = dist[v] + 1;
 				q.push(*e);
 			}
@@ -33,8 +33,8 @@ int main(void) {
 	cout << "Digite o numero de vertices que havera em seu grafo: ";
 	cin >> n_v;
 	
-	vector< vector<int> > adj(n_v);//Guardar· os vizinhos de cada vÈrtice.
-	int dist[n_v];//Guardar· a dist‚ncia de um certo vÈrtice inicial ao iesimo vÈrtice.
+	vector< vector<int> > adj(n_v);//Guardar√° os vizinhos de cada v√©rtice.
+	int dist[n_v];//Guardar√° a dist√¢ncia de um certo v√©rtice inicial ao iesimo v√©rtice.
 	
 	cout << "\nDigite o numero de arestas que havera em seu grafo(arestas de apenas um sentido): ";
 	cin >> n_a;
@@ -45,11 +45,11 @@ int main(void) {
 		cin >> from;
 		cout << "Para quem vai a conexao: ";
 		cin >> to;
-		inserir_no_grafo(from, to, adj);//Inserindo as conexıes.
+		inserir_no_grafo(from, to, adj);//Inserindo as conex√µes.
 		cout << "\n";
 	}
 	
-	for(i = 0; i < n_v; i++) {//Apenas imprimindo os vizinhos de cada vÈrtice.
+	for(i = 0; i < n_v; i++) {//Apenas imprimindo os vizinhos de cada v√©rtice.
 		cout << i << " = ";
 		for(vector<int>::iterator it = adj[i].begin(); it != adj[i].end(); it++) {
 			cout << *it << " ";
